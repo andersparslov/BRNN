@@ -203,6 +203,20 @@ def sort_links(data, start_link, end_link):
     data = data[data['link_ref'].isin(ordered_list)]
     return data, ordered_list
 
+def tod_interval(x):
+    if(x < 4):
+        return 0
+    elif(x < 8):
+        return 1
+    elif(x < 12):
+        return 2
+    elif(x < 16):
+        return 3
+    elif(x < 20):
+        return 4
+    elif(x < 24):
+        return 5
+
 def split_df(data, start_train, end_train, end_test):
     data_train = data[start_train:end_train]
     data_test = data[end_train:end_test]
